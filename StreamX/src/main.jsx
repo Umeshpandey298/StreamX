@@ -5,6 +5,8 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import Router from "./routes";
 import axios from "axios";
+import { store } from "./store/store";
+import { Provider } from "react-redux";
 
 /** setup axios */
 axios.defaults.baseURL = "https://api.themoviedb.org/3/";
@@ -13,7 +15,10 @@ axios.defaults.headers.common["Authorization"] = `Bearer ${
 }`;
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
+  <Provider store={store}>
     <RouterProvider router={Router} />
-  </StrictMode>
+  </Provider>
+
+  // </StrictMode>
 );

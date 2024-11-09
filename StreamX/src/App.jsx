@@ -20,6 +20,21 @@ function App() {
     }
   };
 
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  // const fetchTrendingOuts = async () => {
+  //   try {
+  //     const response = await axios.get("trending/all/week");
+  //     dispatch(setBannerData(response.data.results));
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.error("Error fetching trending data:", error);
+  //     setError("Failed to load trending content.");
+  //     setLoading(false);
+  //   }
+  // };
+
   useEffect(() => {
     fetchTrendingOuts();
   }, []);
